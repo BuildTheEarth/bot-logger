@@ -9,6 +9,7 @@
     "bugs": "https://github.com/BuildTheEarth/bot-logger/issues",
     "homepage": "https://github.com/BuildTheEarth/bot-logger#readme",
     "dependencies": {
+        "chalk": "^4.1.0",
         "winston-daily-rotate-file": "^4.5.0"
     },
     "peerDependencies": {
