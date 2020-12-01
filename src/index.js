@@ -9,15 +9,15 @@ const DailyRotateFile = require("winston-daily-rotate-file")
 
 /**
  * @typedef BotLoggerOptions
- * @property {boolean} logFiles
- * @property {LogLevel} consoleLevel
- * @property {LogLevel} fileLevel
- * @property {string} filePath
- * @property {string} fileFrequency
+ * @property {boolean?} logFiles
+ * @property {LogLevel?} consoleLevel
+ * @property {LogLevel?} fileLevel
+ * @property {string?} filePath
+ * @property {string?} fileFrequency
  */
 
 // thanks winston devs for not exposing the Logger class 👍
-/** @param {winston.LoggerOptions & BotLoggerOptions} options */
+/** @param {(winston.LoggerOptions & BotLoggerOptions)?} options */
 module.exports = function createLogger(options) {
     const colors = {
         info: chalk.blueBright,
