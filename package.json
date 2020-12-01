@@ -14,5 +14,8 @@
     },
     "peerDependencies": {
         "winston": "3.x"
+    },
+    "devDependencies": {
+        "winston": "^3.3.3"
     }
 }
