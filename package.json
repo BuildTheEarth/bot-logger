@@ -1,0 +1,17 @@
+{
+    "name": "bot-logger",
+    "version": "0.0.0",
+    "description": "A winston logger used by the BuildTheEarth Discord bots.",
+    "main": "src/index.js",
+    "repository": "BuildTheEarth/bot-logger",
+    "author": "BuildTheEarth",
+    "license": "MIT",
+    "bugs": "https://github.com/BuildTheEarth/bot-logger/issues",
+    "homepage": "https://github.com/BuildTheEarth/bot-logger#readme",
+    "dependencies": {
+        "winston-daily-rotate-file": "^4.5.0"
+    },
+    "peerDependencies": {
+        "winston": "3.x"
+    }
+}
