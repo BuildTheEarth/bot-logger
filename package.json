@@ -1,5 +1,5 @@
 {
-    "name": "bot-logger",
+    "name": "@buildtheearth/bot-logger",
     "version": "0.0.0",
     "description": "A winston logger used by the BuildTheEarth Discord bots.",
     "main": "src/index.js",
