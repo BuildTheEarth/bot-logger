@@ -38,7 +38,7 @@ module.exports = function createLogger(options) {
                     const level = color(info.level.toUpperCase() + ":")
                     const indent = info.level.length === 4 ? "  " : " "
                     // prettier-ignore
-                    const scope = chalk.gray(info.message.match(/^(\[.+\]) /)?.[1] || "")
+                    const scope = chalk.gray((info.message.match(/^(\[.+\]) /) || [])[1] || "")
                     const message = info.message.replace(/^\[.+\] +/, "")
                     const space = scope ? " " : ""
 
