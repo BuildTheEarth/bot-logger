@@ -1,6 +1,7 @@
 const path = require("path")
 const chalk = require("chalk")
 const winston = require("winston")
+const stripANSI = require("strip-ansi")
 const DailyRotateFile = require("winston-daily-rotate-file")
 
 /**
@@ -56,7 +57,8 @@ module.exports = function createLogger(options) {
                     winston.format.timestamp({ format: "HH:mm:ss" }),
                     winston.format.printf(info => {
                         const level = info.level.toUpperCase()
-                        return `[${info.timestamp}] ${level}: ${info.message}`
+                        const message = stripANSI(info.message)
+                        return `[${info.timestamp}] ${level}: ${message}`
                     })
                 ),
                 filename: path.join(options.filePath, "/../logs/%DATE%.log"),
