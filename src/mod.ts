@@ -1,17 +1,17 @@
-import { Houston, ConsoleTransport, LogLevel, Format } from "https://x.nest.land/Houston@1.0.8/mod.ts"
+import { Houston, ConsoleTransport, LogLevel, Format, TimePrefix } from "https://x.nest.land/Houston@1.0.8/mod.ts"
 import chalk from "https://deno.land/x/chalk_deno@v4.1.1-deno/source/index.js"
 
-export function createLogger(options: Record<String, String> = {}) {
+export function createLogger(options = {}) {
     const colors = {
-        [LogLevel.Info]: chalk.blueBright,
-        [LogLevel.Error]: chalk.redBright,
-        [LogLevel.Warning]: chalk.yellowBright,
-        [LogLevel.Success]: chalk.magentaBright
+        [LogLevel.Info]: chalk.blue,
+        [LogLevel.Error]: chalk.red,
+        [LogLevel.Warning]: chalk.yellow,
+        [LogLevel.Success]: chalk.magenta
     }
 
     const transports = [
         new ConsoleTransport({
-            level: options.consoleLevel || LogLevel.Info,
+            level: options.consoleLevel || [LogLevel.Info, LogLevel.Error, LogLevel.Warning, LogLevel.Success],
             format: Format.text,
             prefix: new TimePrefix()
         })
