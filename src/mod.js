@@ -1,12 +1,11 @@
-import { Houston, ConsoleTransport, LogLevel, Format, TimePrefix } from "https://x.nest.land/Houston@1.0.8/mod.ts"
-import chalk from "https://deno.land/x/chalk_deno@v4.1.1-deno/source/index.js"
+import { Houston, ConsoleTransport, LogLevel, Format, TimePrefix, Color, FileTransport } from "https://x.nest.land/Houston@1.0.8/mod.ts"
 
 export function createLogger(options = {}) {
     const colors = {
-        [LogLevel.Info]: chalk.blue,
-        [LogLevel.Error]: chalk.red,
-        [LogLevel.Warning]: chalk.yellow,
-        [LogLevel.Success]: chalk.magenta
+        [LogLevel.Info]: Color.Blue,
+        [LogLevel.Error]: Color.Red,
+        [LogLevel.Warning]: Color.Yellow,
+        [LogLevel.Success]: Color.Magenta
     }
 
     const transports = [
